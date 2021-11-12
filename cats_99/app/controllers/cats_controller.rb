@@ -21,12 +21,13 @@ class CatsController < ApplicationController
     end 
 
     def create 
-        @cat = Cat.new(cats_params)
-        if @cat.save
-            redirect_to cat_url(@cat)
-        else 
-            render json: @cat.errors.full_messages, status: 422
-        end 
+        # debugger
+        # @cat = Cat.new(params[:cat])
+        # if @cat.save
+        #     redirect_to cat_url(@cat)
+        # else 
+        #     render json: @cat.errors.full_messages, status: 422
+        # end 
     end 
 
     def destroy 

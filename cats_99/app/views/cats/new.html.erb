@@ -1,31 +1,35 @@
 <h1> Add New Cat! </h1>
 
-<form action = "create", method = "post"> 
+<form action="/cats", method="post"> 
 
-<label for="name">Name</label>
-<input id="name", type="text", value="">
+    <label for="name">Name</label>
+    <input id="name" type="text" >
+    <br><br>
+<!--
+    <label for="sex">Sex</label>
+    <input id="sex", type="text", name="cat[sex]">
+    <br><br>
 
-<label for="sex">Sex</label>
-<input id="sex", type="text", value="">
+    <label for="birthdate">Date Of Birth</label>
+    <input id="birthdate", type="date", name="cat[birthdate]">
+    <br><br>
 
-<label for="birthdate">Date Of Birth</label>
-<input id="birthdate", type="date", value="">
-
-   <label for="color"> Color </label>
-        <select name="color" id="color">
-            <option selected = "true" disabled ="true">Choose a Color</option>
-            <option value="saab">Saab</option>
-            <option value="mercedes">Mercedes</option>
-            <option value="audi">Audi</option>
+    <label for="color"> Color </label>
+        <select name="cat[color]">
+            <option disabled selected>-- Choose a Color --</option>
+            <option value="white">white</option>
+            <option value="black">black</option>
+            <option value="gray">gray</option>
+            <option value="brown">brown</option>
         </select>
+    <br><br>
 
+    <label for="description">Description</label>
+    <textarea id="description" name="cat[description]"></textarea>
+    <br><br>
+-->
 
-
-
-<label for="birthdate">Date Of Birth</label>
-<input id="birthdate", type="date", value="">
-
-
-
+    <input type="submit" value="Submit">
 
 </form>
+

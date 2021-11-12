@@ -1,6 +1,5 @@
 class CatsController < ApplicationController
 
-
     def index 
         @cats = Cat.all 
         render :index
@@ -24,7 +23,7 @@ class CatsController < ApplicationController
     def create 
         @cat = Cat.new(cats_params)
         if @cat.save
-            redirect_to cat_url
+            redirect_to cat_url(@cat)
         else 
             render json: @cat.errors.full_messages, status: 422
         end 
@@ -36,13 +35,17 @@ class CatsController < ApplicationController
         redirect_to cats_url
     end 
 
+    def update
+        @cat = Cat.find(params[:id])
+        if @cat.update(cats_params)
+            redirect_to cat_url(@cat)
+        else   
+            render json: @cat.errors.full_messages, status: 422
+        end
+    end
+
     def cats_params
         params.require(:cat).permit(:birthdate, :color, :name, :sex, :description)
     end 
-
-
-
-
-
 
 end 

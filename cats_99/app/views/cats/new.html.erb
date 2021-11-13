@@ -2,18 +2,23 @@
 
 <form action="/cats", method="post"> 
 
+    <!--NAME-->
     <label for="name">Name</label>
-    <input id="name" type="text" >
-    <br><br>
-<!--
-    <label for="sex">Sex</label>
-    <input id="sex", type="text", name="cat[sex]">
+    <input id="name" type="text" name="cat[name]" >
     <br><br>
 
+    <!--SEX-->
+    <label for="sex">Sex: </label>
+    M<input id="sex", type="radio", name="cat[sex]" value="M">
+    F<input id="sex", type="radio", name="cat[sex]" value="F">
+    <br><br>
+
+    <!--DOB-->
     <label for="birthdate">Date Of Birth</label>
     <input id="birthdate", type="date", name="cat[birthdate]">
     <br><br>
 
+    <!--COLOR-->
     <label for="color"> Color </label>
         <select name="cat[color]">
             <option disabled selected>-- Choose a Color --</option>
@@ -24,11 +29,12 @@
         </select>
     <br><br>
 
+    <!--DESCRIPTION-->
     <label for="description">Description</label>
     <textarea id="description" name="cat[description]"></textarea>
     <br><br>
--->
 
+    <!--SUBMIT-->
     <input type="submit" value="Submit">
 
 </form>

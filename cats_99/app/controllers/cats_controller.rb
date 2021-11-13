@@ -21,13 +21,12 @@ class CatsController < ApplicationController
     end 
 
     def create 
-        # debugger
-        # @cat = Cat.new(params[:cat])
-        # if @cat.save
-        #     redirect_to cat_url(@cat)
-        # else 
-        #     render json: @cat.errors.full_messages, status: 422
-        # end 
+        @cat = Cat.new(cat_params)
+        if @cat.save
+            redirect_to cat_url(@cat)
+        else 
+            render json: @cat.errors.full_messages, status: 422
+        end 
     end 
 
     def destroy 
@@ -38,14 +37,14 @@ class CatsController < ApplicationController
 
     def update
         @cat = Cat.find(params[:id])
-        if @cat.update(cats_params)
+        if @cat.update(cat_params)
             redirect_to cat_url(@cat)
         else   
             render json: @cat.errors.full_messages, status: 422
         end
     end
 
-    def cats_params
+    def cat_params
         params.require(:cat).permit(:birthdate, :color, :name, :sex, :description)
     end 
 

@@ -13,3 +13,6 @@ class Cat < ApplicationRecord
     end
 
 end
+
+
+# {"cat"=>{"sex"=>"M", "birthdate"=>"2020-02-02", "color"=>"black", "description"=>"Hi!"}, "controller"=>"cats", "action"=>"create"}
